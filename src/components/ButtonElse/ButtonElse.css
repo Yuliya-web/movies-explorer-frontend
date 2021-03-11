@@ -1,0 +1,24 @@
+.btn-else {
+  width: 100%;
+  background-color: #F4F4F4;
+  min-height: 36px;
+  margin-bottom: 80px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.btn-else:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s linear;
+}
+
+.btn-else__text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  margin: 0;
+}

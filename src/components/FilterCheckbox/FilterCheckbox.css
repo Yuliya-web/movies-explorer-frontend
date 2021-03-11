@@ -1,0 +1,68 @@
+.check__line {
+  width: 1140px;
+  min-height: 1px;
+  background-color: #E8E8E8;
+  border: none;
+  margin-top: 15;
+  margin-bottom: 30px;
+}
+
+.check__field {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.check__input {
+  z-index: -1;
+  opacity: 0;
+  align-self: center;
+}
+
+.check__input+label {  
+  background-image: url('../../images/check-on.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 20px;
+  width: 36px;
+}
+
+.check__input+label:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.check__input:checked+label {  
+  background-image: url('../../images/check-off.svg');
+  min-height: 20px;
+  width: 36px;
+}
+
+.check__field-text {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+  margin-left: 12px;
+}
+
+@media all and (max-width: 1279px) {
+  .check__line {
+    width: 708px;
+  }
+}
+@media all and (max-width: 1000px) {
+  
+}
+@media all and (max-width: 767px) {
+  .check__line {
+    width: 350px;
+  }
+} 
+@media all and (max-width: 420px) {
+  .check__line {
+    width: 292px;
+  }
+}
+
