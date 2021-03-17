@@ -40,17 +40,21 @@
 
 .mov-card__save-icon {
   min-height: 30px;
-  margin-right: 19px;
+  margin-right: 22px;
   border: none;
   padding: 0;
-  width: 30px;
+  width: 34px;
   background: url('../../images/save.svg') 0 0 no-repeat;
   transition: "background" 0.3s ease-in;
   background-color: #FFFFFF;
 }
 
-.mov-card__save-icon:hover {
+.mov-card__save-icon_active {
   background-image: url('../../images/save-active.svg');
+}
+
+
+.mov-card__save-icon:hover {
   cursor: pointer;
   opacity: 0.8;
   transition: opacity 0.2s ease-in;
@@ -63,7 +67,7 @@
 
 .mov-card__close-icon {
   min-height: 30px;
-  margin-right: 19px;
+  margin-right: 22px;
   border: none;
   padding: 0;
   width: 30px;
@@ -82,8 +86,9 @@
 }
 
 .mov-card__image {
-  min-height: 203px;
+  height: 203px;
   width: 100%;
+  object-fit: contain;
 }
 
 @media all and (max-width: 1279px) {
@@ -93,6 +98,10 @@
     min-height: 258px;
     max-width: 339px;
   }
+  .mov-card__text-name {
+    font-size: 14px;
+    line-height: 16px;
+  }
   
 }
 @media all and (max-width: 767px) {
@@ -101,7 +110,11 @@
     max-width: 300px;
   }
   .mov-card__image {
-    min-height: 168px;
+    height: 168px;
+  }
+  .mov-card__text-name {
+    font-size: 12px;
+    line-height: 14px;
   }
 } 
 @media all and (max-width: 349px) {

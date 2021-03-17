@@ -21,7 +21,7 @@
 }
 
 .check__input+label {  
-  background-image: url('../../images/check-on.svg');
+  background-image: url('../../images/check-off.svg');
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 20px;
@@ -35,7 +35,7 @@
 }
 
 .check__input:checked+label {  
-  background-image: url('../../images/check-off.svg');
+  background-image: url('../../images/check-on.svg');
   min-height: 20px;
   width: 36px;
 }

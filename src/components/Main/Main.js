@@ -8,7 +8,7 @@ import { AboutMe } from '../AboutMe/AboutMe';
 import { Portfolio } from '../Portfolio/Portfolio';
 
 export function Main({loggedIn}) {
-  
+
   return(
     <>
       < Header loggedIn={loggedIn} />

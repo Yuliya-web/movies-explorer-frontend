@@ -1,11 +1,9 @@
 import React from 'react';
-import ScrollableAnchor from 'react-scrollable-anchor';
 
 export function Techs() {
 
-  return ( 
-  <ScrollableAnchor id={"techs"}>  
-    <section className="techs">
+  return (  
+    <section className="techs" id={"techs"}>
 
       <h2 className="techs__title">Технологии</h2>
       <hr className="techs__line"></hr>
@@ -21,7 +19,6 @@ export function Techs() {
         <button className="techs__button">MongoDB</button>
       </div>
       
-    </section>  
-  </ScrollableAnchor>        
+    </section>       
   )
 }

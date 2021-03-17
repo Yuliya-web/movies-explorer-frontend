@@ -109,6 +109,11 @@
   transition: opacity 0.2s linear;
 }
 
+.login__on_disabled {
+  background-color: #F8F8F8;
+  color: #C2C2C2;
+}
+
 .login__question {
   margin: 0;
   color: #A0A0A0;
