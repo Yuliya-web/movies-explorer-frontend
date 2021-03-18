@@ -1,12 +1,10 @@
 import React from 'react';
-import ScrollableAnchor from 'react-scrollable-anchor';
 import photo from '../../images/photo.jpeg';
 
 export function AboutMe() {
 
   return ( 
-  <ScrollableAnchor id={"about-me"}>  
-    <section className="about-me">      
+    <section className="about-me" id={"about-me"}>      
       <h2 className="about-me__title">Студент</h2>
       <hr className="about-me__line"></hr>
       <div className="about-me__student">
@@ -23,7 +21,6 @@ export function AboutMe() {
       </div>
       
       
-    </section>  
-  </ScrollableAnchor>        
+    </section>        
   )
 }

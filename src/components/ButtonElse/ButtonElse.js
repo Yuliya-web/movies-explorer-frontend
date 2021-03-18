@@ -1,10 +1,11 @@
 import React from 'react';
 
-export function ButtonElse() {
+export function ButtonElse({handleBtnElse, isButtonActive}) {
 
   return (
-    <div className="btn-else">
-      <p className="btn-else__text">Ещё</p>         
+    isButtonActive &&
+    <div className="btn-else" onClick={handleBtnElse}>
+      <p className="btn-else__text" >Ещё</p>         
     </div>
   )
 }
