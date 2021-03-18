@@ -34,6 +34,10 @@ export default function App() {
   const handleLogin = () => {
     setIsLoggedIn(true);
   }
+  React.useEffect(() => {
+    tokenChecking()  
+    getUserAndMovies()
+  }, [loggedIn])
 
    // Авторизация
   function handleLoggedIn(email, password) {
@@ -104,11 +108,6 @@ export default function App() {
   function closeAllPopups() {
     setIsInfoTooltipOpen(false)
   }
-
-  React.useEffect(() => {
-    tokenChecking()  
-    getUserAndMovies()
-  }, [loggedIn])
 
   function getUserAndMovies() {
     if (loggedIn) {
