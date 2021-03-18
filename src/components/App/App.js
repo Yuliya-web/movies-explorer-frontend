@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 import { ProtectedRoute } from '../ProtectedRoute/ProtectedRoute';
@@ -295,8 +295,24 @@ export default function App() {
             infoMessage={infoMessage}
             setInfoMessage={setInfoMessage}
           />
-                  
-
+          <Route exact path='/movies'>
+            { loggedIn
+              ? <Redirect to='/movies' />
+              : <Redirect to='/' />
+            }
+          </Route>
+          <Route exact path='/saved-movies'>
+            { loggedIn
+              ? <Redirect to='/saved-movies' />
+              : <Redirect to='/' />
+            }
+          </Route>
+          <Route exact path='/profile'>
+            { loggedIn
+              ? <Redirect to='/profile' />
+              : <Redirect to='/' />
+            }    
+          </Route>
           < Route exact path="/signin">
               <Login 
                 onLogin={handleLoggedIn}
