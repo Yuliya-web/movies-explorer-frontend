@@ -1,4 +1,5 @@
 import React from 'react';
+import {shortDuration} from './constants';
 
 // фильтрация фильмов по названию по нажатию на кнопку
 export function searchMovies ( key ) {
@@ -22,7 +23,7 @@ export function searchMovies ( key ) {
 export function searchShortMovies(massive) {
   if(massive) {
     if(localStorage.getItem('check') === "on" && massive.length > 0){
-    const findMoviesShort = massive.filter(item => item.duration <= 41);
+    const findMoviesShort = massive.filter(item => item.duration <= shortDuration);
     console.log('отфильтровано по времени');
     return( findMoviesShort );
   }

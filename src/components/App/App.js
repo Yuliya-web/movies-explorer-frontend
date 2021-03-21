@@ -283,6 +283,8 @@ export default function App() {
             handleSearchShortMovies={handleSearchShortMovies}
             handleDeleteMovies={handleDeleteMovies}
             searchShortMovies={searchShortMovies}
+            apiMain={apiMain.getAllMovies}
+            getUserAndMovies={getUserAndMovies}
           />
           < ProtectedRoute exact path="/profile" 
             loggedIn={loggedIn} 

@@ -7,8 +7,8 @@ export function MoviesCardList(props) {
   const location = useLocation().pathname;
 
   React.useEffect(() => {
-    getSavedMassive();  
-    location === '/saved-movies' && props.setSearchSubmit(false);
+    location === '/saved-movies' && props.setSearchSubmit(false) && props.getUserAndMovies();    
+    getSavedMassive();      
     handleCheckBox();
   },[]);
 

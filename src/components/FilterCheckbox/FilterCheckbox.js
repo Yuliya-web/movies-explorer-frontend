@@ -7,8 +7,7 @@ export function FilterCheckbox(props) {
 
   // работа чекбокса короткометражек
   React.useEffect(() => {
-    handleSetCheck();
-    
+    handleSetCheck();    
   },[]);
 
   // свитч по кнопке чек-бокса
