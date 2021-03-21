@@ -58,9 +58,10 @@ export function MoviesCard(props) {
     }    
   }
   // удаление из "Сохраненные фильмы" по нажатию на крестик
-  function deleteOnCloseBtn() {
+  function deleteOnClose(evt) {
     
    props.handleDeleteMovies(props.movie);
+   evt.target.closest('.mov-card').remove();
   }
 
 
@@ -85,7 +86,7 @@ export function MoviesCard(props) {
               <p className="mov-card__text-name">{props.movie.nameRU}</p>
               <p className="mov-card__text-time">{getTimeFromMins(mins)}</p>
             </div>
-            <button alt="Закладка" id="icon-card" className={"mov-card__close-icon"} onClick={deleteOnCloseBtn} type="button" ></button>
+            <button alt="Закладка" id="icon-card" className={"mov-card__close-icon"} onClick={deleteOnClose} type="button" ></button>
           </div>
           <a className="mov-card__image" href={props.movie.trailer} target="_blank" rel="noreferrer"><img alt="Фильм" className="mov-card__image" src={location === '/movies' ? urlForMoviesImage : props.movie.image}></img></a>        
         </div>    

@@ -29,7 +29,8 @@ export function SavedMovies(props) {
           handleDeleteMovies={props.handleDeleteMovies}
           handleSetMovies={props.handleSetMovies} 
           searchShortMovies={props.searchShortMovies}
-          checkboxOn={checkboxOn}>
+          checkboxOn={checkboxOn}
+          getUserAndMovies={props.getUserAndMovies}>
           
         </MoviesCardList>
       </main>

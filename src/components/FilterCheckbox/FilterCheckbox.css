@@ -57,7 +57,7 @@
 }
 @media all and (max-width: 767px) {
   .check__line {
-    width: 350px;
+    width: 306px;
   }
 } 
 @media all and (max-width: 420px) {
