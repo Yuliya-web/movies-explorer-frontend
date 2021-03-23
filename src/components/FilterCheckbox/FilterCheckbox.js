@@ -23,6 +23,9 @@ export function FilterCheckbox(props) {
     else {
       localStorage.removeItem('check'); 
       props.saveKeyAndSearch();
+      if (location === '/saved-movies') {
+        props.setcheckboxOn(false);
+      }
     }
     
   }
