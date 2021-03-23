@@ -2,20 +2,14 @@ import React from 'react';
 import {shortDuration} from './constants';
 
 // фильтрация фильмов по названию по нажатию на кнопку
-export function searchMovies ( key ) {
-  if (document.getElementById("allMovies")) {
-    const movies = JSON.parse(localStorage.getItem('movies'));
-    if (movies) {
-      const findMovies = movies.filter(item => item.nameRU.toLowerCase().includes(key.toLowerCase())); 
-      return findMovies;
-    }  
+export function searchMovies ( key ) {  
+  function choosePageMassive() {
+    return document.getElementById("allMovies") ? JSON.parse(localStorage.getItem('movies')) : JSON.parse(localStorage.getItem('saved-movies'));
   }
-  else {
-    const savedMovies = JSON.parse(localStorage.getItem('saved-movies'));
-    if (savedMovies) {
-      const findMovies = savedMovies.filter(item => item.nameRU.toLowerCase().includes(key.toLowerCase())); 
-      return findMovies;
-    }
+  const movies = choosePageMassive();
+  if (movies) {
+    const findMovies = movies.filter(item => item.nameRU.toLowerCase().includes(key.toLowerCase())); 
+    return findMovies;      
   }
 }
 
