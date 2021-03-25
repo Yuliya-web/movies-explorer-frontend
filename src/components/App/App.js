@@ -209,19 +209,23 @@ export default function App() {
   // функция сохранения фильмов в SavedMovies
   function handleSaveMovies(movieCard) {
     apiMain.addNewCard({    
-      country: movieCard.country,
-      director: movieCard.director,
+      country: movieCard.country || ' ',
+      director: movieCard.director || ' ',
       duration: movieCard.duration.toString(),
-      year: movieCard.year,
-      description: movieCard.description,
-      image: `${imageUrl}${movieCard.image.url}`,
-      trailer: movieCard.trailerLink,
+      year: movieCard.year || ' ',
+      description: movieCard.description || ' ',
+      image: `${imageUrl}${movieCard.image.url}` || ' ',
+      trailer: movieCard.trailerLink || ' ',
       nameRU: movieCard.nameRU,
-      nameEN: movieCard.nameEN,
-      thumbnail: `${imageUrl}${movieCard.image.formats.thumbnail.url}`,
+      nameEN: movieCard.nameEN || ' ',
+      thumbnail: `${imageUrl}${movieCard.image.formats.thumbnail.url}` || ' ',
       movieId: movieCard.id, 
     }, token)      
         .then((movieInfo) => {
+          //const savedCards = JSON.parse(localStorage.getItem('saved-movies'));
+         // const addElementMassive = savedCards.push(movieInfo);
+         // localStorage.setItem('saved-movies',JSON.stringify(addElementMassive));
+         // console.log(savedCards)
           apiMain.getAllMovies(token)
             .then((moviesList) => {
               localStorage.setItem('saved-movies',JSON.stringify(moviesList))
@@ -229,7 +233,7 @@ export default function App() {
             .catch ((err) => {
               setInfoMessage(errors(err))
             })         
-          //console.log(movieInfo);
+          
         })
         .catch ((err) => {
           setInfoMessage(errors(err));

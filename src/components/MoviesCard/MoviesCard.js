@@ -16,17 +16,21 @@ export function MoviesCard(props) {
   // Определяем, являемся ли мы владельцем текущей карточки
   const isOwn = props.movie.owner === currentUser._id;
 
-  // достанем массив сохраненных фильмов
-  const savedList = JSON.parse(localStorage.getItem('saved-movies'));
+  
 
   // Определяем, есть ли у карточки лайк, поставленный пользователем
-  const isLiked =  savedList && savedList.some((item) => item.nameRU.includes(props.movie.nameRU));
+  const isLiked = () => {
+    // достанем массив сохраненных фильмов
+  const savedList = JSON.parse(localStorage.getItem('saved-movies'));
+  console.log(savedList);
+  return savedList && savedList.some((item) => item.nameRU.includes(props.movie.nameRU));
+  }  
 
   // Создаём переменную, которую после зададим в `className` для кнопки лайка
   const cardLikeButtonClassName = like ? "mov-card__save-icon mov-card__save-icon_active": "mov-card__save-icon"
 
   React.useEffect(() => 
-    (like || isLiked) ? setLike(true): setLike(false)
+    (isLiked()) ? setLike(true): setLike(false)
   ,[]);
 
   // перевод времени в часы
@@ -43,18 +47,21 @@ export function MoviesCard(props) {
 
   // сохранение и удаление из "Сохраненные фильмы" по нажатию кнопки "Лайка"
   function saveOrDeleteMovies() {
-    if (isLiked || like) {
+    if (isLiked()) {
       // Определяем карточку с лайком (из сохраненных), которую будем удалять
       const savedList = JSON.parse(localStorage.getItem('saved-movies'));
       const cardLiked =  savedList.find((item) => item.nameRU === props.movie.nameRU);
-
-      props.handleDeleteMovies(cardLiked);
-      setLike(false);
+      // удаление
+      if(cardLiked) {
+        props.handleDeleteMovies(cardLiked);
+        setLike(false)
+      }          
 
     }
     else {
+      // сохранение
       props.handleSaveMovies(props.movie);
-      setLike(true);      
+      setLike(true);
     }    
   }
   // удаление из "Сохраненные фильмы" по нажатию на крестик
